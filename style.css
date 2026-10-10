@@ -91,6 +91,14 @@ button {
   font-size: 500%;
 }
 
+.projects img {
+  transition: transform 0.3s ease;
+
+  &:hover {
+    transform: scale(1.05); 
+  }
+}
+
 h1 {
   border-bottom: 1px solid oklch(80% 3% 200);
 }
@@ -112,3 +120,4 @@ h1, h2, h3, h4, h5, h6 {
     transform: scale(1.05); 
   }
 }
+
