@@ -3,30 +3,33 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contact</title>
+    <title>Contact me</title>
+    <link rel="stylesheet" href ="../style.css">
 </head>
 <body>
     <nav>
         <ul>
             <li><a href="../index.html">Home</a></li>
             <li><a href="../projects/index.html">Projects</a></li>
-            <li><a href="index.html">Contact</a></li>
+            <li><a href="index.html" class="current">Contact</a></li>
             <li><a href="https://github.com/DonLe727" target="_blank">GitHub Profile</a></li>
             <li><a href="../resume/index.html">Resume</a></li>
         </ul>
     </nav>
-    <h1>Contact</h1>
+    <h1>Contact <b><i>Me!</i></b></h1>
     <form action="mailto:dtl007@ucsd.edu" method="POST" enctype="text/plain">
-        <label>Your Email:
+        <label>
+            Your Email:
             <input name="email" type="email">
         </label>
-        <label>Subject:
+        <label>
+            Subject:
             <input name="subject" type="text">
         </label>
-        <label>Message:
+        <label>
+            Message:
             <textarea name="body"></textarea>
         </label>
-        <br><br>
         <button>Submit</button>
     </form>
 </body>
