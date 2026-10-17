@@ -79,3 +79,31 @@ if ("colorScheme" in localStorage) {
   // Update the dropdown menu to match the saved preference
   select.value = localStorage.colorScheme;
 }
+
+// Grab the form element from the page
+let form = document.querySelector('form');
+
+// Use optional chaining (?.) so this doesn't throw an error on pages without a form
+form?.addEventListener('submit', function (event) {
+  // Prevent the browser from handling the form submission normally
+  event.preventDefault();
+
+  // Extract all the data the user typed into the form
+  let data = new FormData(form);
+  
+  // Start building the URL using the action attribute (mailto:...)
+  let url = form.action + "?";
+
+  // Loop through each form field to encode the values
+  let params = [];
+  for (let [name, value] of data) {
+    // encodeURIComponent converts spaces to %20 and handles other special characters
+    params.push(name + '=' + encodeURIComponent(value));
+  }
+
+  // Join the parameters with '&' and append to the URL
+  url += params.join('&');
+
+  // Trigger the mail client with the properly formatted URL
+  location.href = url;
+});
