@@ -71,7 +71,7 @@ button {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(15em, 1fr));
   gap: 1em;
-  background-color: oklch(from var(--color-accent) 95% 5% h);
+  background-color: color-mix(in oklch, var(--color-accent), canvas 85%);
 }
 
 .projects article {
@@ -87,7 +87,6 @@ button {
 }
 
 .projects h1{
-  background-color: var(--color-accent);
   font-size: 500%;
 }
 
@@ -121,3 +120,44 @@ h1, h2, h3, h4, h5, h6 {
   }
 }
 
+html {
+  --color-accent: oklch(89.171% 0.09631 210.581);
+  accent-color: var(--color-accent);
+  color-scheme: light dark; /* Added for automatic dark mode */
+}
+
+nav {
+  --border-color: oklch(50% 10% 200 / 40%); /* Defines the new adaptive border color */
+  display: flex;
+  margin-bottom: 2em; 
+  border-bottom: 1px solid var(--border-color); /* Applies the variable */
+}
+
+nav a.current {
+  border-bottom: 0.4em solid var(--border-color); /* Applies the variable */
+  padding-bottom: 0.1em;
+}
+
+nav a:hover {
+  font-weight: bold;
+  border-bottom: 0.4em solid var(--color-accent);
+  padding-bottom: 0.1em;
+  /* Mixes your accent color with the dynamic background color for legibility */
+  background-color: color-mix(in oklch, var(--color-accent), canvas 85%); 
+}
+
+.color-scheme {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  font-size: 0.8rem;
+  font-family: inherit;
+}
+
+.projects article {
+  /* Mixes your accent color with the dynamic background */
+  background-color: color-mix(in oklch, var(--color-accent), canvas 85%); 
+  
+  /* Keep any other properties you already have here like padding or border-radius */
+
+}
