@@ -14,15 +14,16 @@ currentLink?.classList.add('current');
 
 let pages = [
   { url: '', title: 'Home' },
-  { url: 'projects/index.html', title: 'Projects' },
-  { url: 'contact/index.html', title: 'Contact' },
+  { url: 'projects/', title: 'Projects' },
+  { url: 'contact/', title: 'Contact' },
   { url: 'https://github.com/DonLe727', title: 'Github Profile' },
-  { url: 'resume/index.html', title: 'Resume' },
+  { url: 'resume/', title: 'Resume' },
 ];
 
 let nav = document.createElement('nav');
 document.body.prepend(nav);
 
+// FIX: Changed %20 to a hyphen (-) to match your GitHub repo URL
 const BASE_PATH = (location.hostname === "localhost" || location.hostname === "127.0.0.1") ? "/" : "/DSC_106-Portfolio/";
 
 for (let p of pages) {
