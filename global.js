@@ -23,7 +23,7 @@ let pages = [
 let nav = document.createElement('nav');
 document.body.prepend(nav);
 
-const BASE_PATH = (location.hostname === "localhost" || location.hostname === "127.0.0.1") ? "/" : "/DSC_106%20Portfolio/";
+const BASE_PATH = (location.hostname === "localhost" || location.hostname === "127.0.0.1") ? "/" : "/DSC_106-Portfolio/";
 
 for (let p of pages) {
   let url = p.url;
