@@ -189,3 +189,81 @@ nav a:hover {
     font-weight: bold;
     /* Uses the default text color which your theme already handles */
 }
+
+#projects-pie-plot {
+  max-width: 20em;
+  margin-block: 2em;
+  overflow: visible;
+}
+
+/* Step 2.2: Legend Layout */
+.legend {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(9em, 1fr));
+    gap: 1em;
+    padding: 1em;
+    margin: 0;
+    list-style: none;
+    border: 1px solid light-dark(#ccc, #444);
+    background-color: light-dark(#f9f9f9, #222);
+    flex: 1; /* Allows it to expand next to the pie chart */
+}
+
+/* Style the individual list items */
+.legend li {
+    display: flex;
+    align-items: center;
+    gap: 0.5em;
+}
+
+/* Step 2.2: Making the swatch look like a swatch */
+.legend .swatch {
+    display: inline-block;
+    width: 1em;
+    height: 1em;
+    background-color: var(--color); /* Uses the color assigned in JS */
+    border-radius: 50%; /* Optional: makes the swatches circular */
+}
+
+.container {
+    display: flex;
+    align-items: center;
+    gap: 2em;
+}
+
+.searchBar {
+    width: 100%;
+    padding: 0.5em 1em;
+    font-size: 1.2em;
+    margin-bottom: 2em;
+    border: 1px solid light-dark(#ccc, #444);
+    background-color: light-dark(#fff, #222);
+    border-radius: 4px;
+    box-sizing: border-box; /* Ensures padding doesn't push it off the screen */
+}
+
+&:has(path:hover) {
+  path:not(:hover) {
+    transform: scale(1.05);
+    opacity: 0.5;
+  }
+}
+
+path {
+  transition: 300ms;
+}
+
+path.selected {
+    stroke: var(--color-accent, oklch(90.109% 0.08889 210.092));
+    stroke-width: 2px;
+}
+
+.legend li.selected {
+    color: var(--color-accent); /* Makes the text light blue */
+    font-weight: bold;          /* Makes the year bold */
+}
+
+.legend li.selected .swatch {
+    transform: scale(1.3);
+    box-shadow: 0 0 4px var(--color);
+}
