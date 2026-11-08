@@ -267,3 +267,20 @@ path.selected {
     transform: scale(1.3);
     box-shadow: 0 0 4px var(--color);
 }
+
+dl.stats {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(8rem, 1fr));
+  gap: 0.5rem 1rem;
+}
+dl.stats dt {
+  grid-row: 1;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  color: gray;
+}
+dl.stats dd {
+  grid-row: 2;
+  margin: 0;
+  font-size: 2rem;
+}
