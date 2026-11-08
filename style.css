@@ -98,14 +98,6 @@ button {
   }
 }
 
-h1 {
-  border-bottom: 1px solid oklch(80% 3% 200);
-}
-
-h2 {
-  border-bottom: 1px solid oklch(80% 3% 200);
-}
-
 h1, h2, h3, h4, h5, h6 {
   line-height: 1.1;
   text-wrap: balance;
@@ -272,15 +264,95 @@ dl.stats {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(8rem, 1fr));
   gap: 0.5rem 1rem;
+
+  /* raised card look */
+  padding: 1.25em 1.5em;
+  margin-block: 1.5em;
+  border: 1px solid light-dark(#ccc, #444);
+  border-radius: 8px;
+  background-color: light-dark(#f9f9f9, #1e1e1e);
+  box-shadow:
+    0 10px 20px rgba(0, 0, 0, 0.15),
+    0 3px 6px rgba(0, 0, 0, 0.10),
+    inset 0 1px 0 rgba(255, 255, 255, 0.08); /* faint top highlight */
 }
+
 dl.stats dt {
   grid-row: 1;
   font-size: 0.75rem;
   text-transform: uppercase;
   color: gray;
 }
+
 dl.stats dd {
   grid-row: 2;
   margin: 0;
   font-size: 2rem;
+}
+
+dl.info {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 0.25em 1em;
+  margin: 0;
+  transition-duration: 500ms;
+  transition-property: opacity, visibility;
+}
+
+dl.info[hidden]:not(:hover, :focus-within) {
+  opacity: 0;
+  visibility: hidden;
+}
+
+dl.info dt {
+  color: gray;          /* labels quieter than values */
+}
+dl.info dd {
+  margin: 0;
+}
+
+.tooltip {
+  position: fixed;
+  top: 1em;
+  left: 1em;
+
+  /* 3.2: make it look like a tooltip */
+  padding: 0.75em 1em;
+  border-radius: 8px;
+  font-size: 0.9em;
+  background-color: light-dark(rgb(255 255 255 / 0.85), rgb(30 30 30 / 0.85));
+  border: 1px solid light-dark(rgb(0 0 0 / 0.1), rgb(255 255 255 / 0.15));
+  box-shadow: 0 4px 14px rgb(0 0 0 / 0.25);
+  backdrop-filter: blur(8px);   /* frosted glass */
+}
+
+circle {
+  transition: 200ms;
+  transform-origin: center;
+  transform-box: fill-box;   /* scale from the dot's center, not the SVG corner */
+}
+circle:hover {
+  transform: scale(1.2);
+}
+
+@keyframes marching-ants {
+  to { stroke-dashoffset: -8; }
+}
+.selection {
+  fill-opacity: 0.1;
+  stroke: currentColor;      /* adapts to light/dark mode */
+  stroke-opacity: 0.7;
+  stroke-dasharray: 5 3;
+  animation: marching-ants 2s linear infinite;
+}
+
+circle.selected {
+  fill: #ff6b6b;
+}
+
+.gridlines {
+  stroke-opacity: 0.2;
+}
+.gridlines .domain {
+  display: none;   /* hides the extra vertical line the gridline axis draws */
 }
