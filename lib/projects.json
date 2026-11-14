@@ -18,7 +18,7 @@
         "description": "Data Visualization of NYC City Complaints from Bloomberg's Office Study. This project aims to analyze and visualize the patterns and trends in complaints received by various city departments, providing insights into the most common issues faced by residents and the effectiveness of city services."
     },
     {
-        "title": "DSC 106 Geospatial Visualizations",
+        "title": "Visualizing Bike Traffic in Boston",
         "year": "2026",
         "image": "../images/DSC-106-Geospatial-Visualizations.png",
         "description": "In this project, we create an interactive map to visualize geospatial data about bike trafic in Boston during different times of the day using Mapbox.",
