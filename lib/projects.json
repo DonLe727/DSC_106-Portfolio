@@ -20,8 +20,8 @@
     {
         "title": "DSC 106 Geospatial Visualizations",
         "year": "2026",
-        "image": "../images/DSC-106-Geospatial-Visualizations.png",
-        "description": "In this project, we create an interactive map to visualize geospatial data about bike trafic in Boston during different times of the day.",
+        "image": "images/DSC-106-Geospatial-Visualizations.png",
+        "description": "In this project, we create an interactive map to visualize geospatial data about bike trafic in Boston during different times of the day using Mapbox.",
         "url": "https://donle727.github.io/DSC-106-Geospatial-Visualizations/"
     },
     {
