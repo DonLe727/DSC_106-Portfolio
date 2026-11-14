@@ -18,10 +18,11 @@
         "description": "Data Visualization of NYC City Complaints from Bloomberg's Office Study. This project aims to analyze and visualize the patterns and trends in complaints received by various city departments, providing insights into the most common issues faced by residents and the effectiveness of city services."
     },
     {
-        "title": "Repellat eum corrupti fugit.",
-        "year": "2024",
-        "image": "https://vis-society.github.io/labs/2/images/empty.svg",
-        "description": "Exercitationem ad quis modi nobis maiores. Sunt quo corporis consequuntur alias tempora et, velit minus? Aspernatur, dolore odio, veniam necessitatibus officiis quisquam est suscipit, assumenda iste quasi quas quia ex?"
+        "title": "DSC 106 Geospatial Visualizations",
+        "year": "2026",
+        "image": "images/DSC-106-Geospatial-Visualizations.png",
+        "description": "In this project, we create an interactive map to visualize geospatial data about bike trafic in Boston during different times of the day.",
+        "url": "https://donle727.github.io/DSC-106-Geospatial-Visualizations/"
     },
     {
         "title": "Accusantium autem ratione perspiciatis?",
