@@ -356,3 +356,117 @@ circle.selected {
 .gridlines .domain {
   display: none;   /* hides the extra vertical line the gridline axis draws */
 }
+
+#commit-filter {
+    display: flex;
+    align-items: baseline;
+    margin-block: 1rem;
+}
+
+#commit-filter label {
+    display: flex;
+    align-items: baseline;
+    flex: 1;
+    gap: 0.75rem;
+}
+
+#commit-filter input[type="range"] {
+    flex: 1;   /* stretch the slider to fill the space between the label text and the date */
+}
+
+#commit-filter time {
+    margin-left: auto;
+    white-space: nowrap;
+}
+
+circle {
+    transition: all 200ms, r calc(var(--r) * 100ms);
+    transform-origin: center;
+    transform-box: fill-box;
+
+    &:hover {
+        transform: scale(1.5);
+    }
+
+    @starting-style {
+        r: 0;
+    }
+}
+
+#files {
+    display: grid;
+    grid-template-columns: 1fr 4fr;
+    row-gap: 0.75rem;
+    margin-block: 1.5rem;
+
+    > div {
+        grid-column: 1 / -1;
+        display: grid;
+        grid-template-columns: subgrid;
+    }
+
+    dt {
+        grid-column: 1;
+
+        small {
+            display: block;
+            font-size: 0.8em;
+            opacity: 0.65;
+        }
+    }
+
+    dd {
+        grid-column: 2;
+        display: flex;
+        flex-wrap: wrap;
+        align-items: start;
+        align-content: start;
+        gap: 0.15em;
+        padding-top: 0.35em;
+        margin-left: 0;
+    }
+}
+
+.loc {
+    display: flex;
+    width: 0.5em;
+    aspect-ratio: 1;
+    background: var(--color);
+    border-radius: 50%;
+}
+
+/* Two scrollytelling sections: a story column next to a sticky visualization */
+#scrolly-1,
+#scrolly-2 {
+  position: relative;
+  display: flex;
+  gap: 1rem;
+
+  > * {
+    flex: 1;
+  }
+}
+
+#scatter-story,
+#files-story {
+  position: relative;
+}
+
+#scatter-plot {
+  position: sticky;
+  top: 0;
+  left: 0;
+  bottom: auto;
+  height: 50vh;
+}
+
+#files-plot {
+  position: sticky;
+  top: 0;
+  align-self: start;   /* don't stretch to the story's height, or sticky has no room to move */
+}
+
+/* space between paragraphs so each commit gets its own scroll moment */
+.step {
+  padding-bottom: 1.5rem;
+}
