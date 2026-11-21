@@ -423,7 +423,7 @@ scroller
     })
     .onStepEnter(onStepEnter);
 
-// Scrolly 2: the file unit visualization follows its own story
+
 function onFilesStepEnter(response) {
     const maxTime = response.element.__data__.datetime;
     updateFileDisplay(commits.filter((d) => d.datetime <= maxTime));
